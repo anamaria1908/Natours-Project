@@ -1,0 +1,210 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: #08140c;
+    --clr-primary-2: #112718;
+    --clr-primary-3: #193b25;
+    --clr-primary-4: #224f31;
+    /* primary/main color */
+    --clr-primary-5: #2b633d;
+      /* lighter shades of primary color */
+    --clr-primary-6: #3b8a55;
+    --clr-primary-7: #4db16e;
+    --clr-primary-8: #66cb87;
+    --clr-primary-9: #99dcaf;
+    --clr-primary-10:#bbe8ca;
+    /* darkest grey - used for headings */
+    --clr-grey-1: #102a42;
+    --clr-grey-2: #243a52;
+    --clr-grey-3: #324d67;
+    --clr-grey-4: #48647f;
+    /* grey used for paragraphs */
+    --clr-grey-5: #617d98;
+    --clr-grey-6: #829ab0;
+    --clr-grey-7: #9eb2c7;
+    --clr-grey-8: #bcccdc;
+    --clr-grey-9: #dae2ec;
+    --clr-grey-10: #f1f5f8;
+    --clr-white: #fff;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    }
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;
+}
+button {
+    border: none;
+    padding: 15px 40px;
+    display: inline-block;
+}
+.btn {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-radius: 10rem;
+    position: relative;
+    transition: all .3s;
+}
+
+a {
+    text-decoration: none;
+    color: #777;
+}
+
+/* 
+==========
+Header
+==========
+*/
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(34, 79, 49, 0.8) , 
+        rgba(78, 177, 111, 0.8)) , 
+        url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.header-logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+.header-logo {
+    height: 3.5rem;
+}
+.header-text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    margin-right: -3.5rem;
+    animation: moveInLeft 3s;
+}
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    margin-right: -1.7rem;
+    animation: moveInRight 3s;
+}
+/* animation */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    50% {
+        transform: translateX(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    50% {
+        transform: translateX(-2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.btn--white {
+    background-color: #fff;
+}
+.btn:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn--white::after {
+    background: #fff;
+}
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.header-btn {
+    animation: moveInBottom 2s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
